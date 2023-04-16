@@ -1,0 +1,153 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "role": 0,
+      "email": "doctor@gmail.com",
+      "password": "doctor"
+    },
+    {
+      "id": 2,
+      "role": 1,
+      "email": "paciente1@gmail.com",
+      "password": "paciente1"
+    },
+    {
+      "id": 3,
+      "role": 1,
+      "email": "paciente2@gmail.com",
+      "password": "paciente2"
+    },
+    {
+      "id": 4,
+      "role": 0,
+      "email": "doctor2@gmail.com",
+      "password": "doctor2"
+    },
+    {
+      "email": "hpave954@gmail.com",
+      "password": "Heidi0122",
+      "role": 0,
+      "id": 5
+    },
+    {
+      "email": "hpave954@gmail.com",
+      "password": "Heidi0122",
+      "role": 0,
+      "id": 6
+    },
+    {
+      "email": "hec@j.com",
+      "password": "jjj",
+      "role": 1,
+      "id": 7
+    },
+    {
+      "email": "hector.paramovelasquez@cesunbc.edu.mx",
+      "password": "Cesun",
+      "role": 1,
+      "id": 8
+    },
+    {
+      "email": "hector.paramovelasquez@cesunbc.edu.mx",
+      "password": "cesun",
+      "role": 0,
+      "id": 9
+    },
+    {
+      "email": "hector.paramovelasquez@cesunbc.edu.mx",
+      "password": "cesun",
+      "role": 0,
+      "id": 10
+    },
+    {
+      "email": "hector.paramovelasquez@cesunbc.edu.mx",
+      "password": "cesun",
+      "role": 0,
+      "id": 11
+    },
+    {
+      "email": "hector.paramovelasquez@cesunbc.edu.mx",
+      "password": "cesun",
+      "role": 0,
+      "id": 12
+    },
+    {
+      "email": "hector.paramovelasquez@cesunbc.edu.mx",
+      "password": "heheh",
+      "role": 0,
+      "id": 13
+    },
+    {
+      "email": "hector.paramovelasquez@cesunbc.edu.mx",
+      "password": "heidi",
+      "role": 0,
+      "id": 14
+    },
+    {
+      "email": "hector.paramovelasquez@cesunbc.edu.mx",
+      "password": "Heidi0122",
+      "role": 0,
+      "id": 15
+    }
+  ],
+  "pacientes": [
+    {
+      "id": 0,
+      "paciente_id": 2,
+      "age": 20,
+      "phone": 123456789,
+      "address": "calle falsa 123",
+      "alergias": "ninguna",
+      "avatar": "https://placebeard.it/640x360"
+    },
+    {
+      "id": 1,
+      "paciente_id": 3,
+      "age": 20,
+      "phone": 123456789,
+      "address": "calle falsa 123",
+      "alergias": "ninguna",
+      "avatar": "https://placebeard.it/640x360"
+    }
+  ],
+  "doctor": [
+    {
+      "id": 0,
+      "doctor_id": 1,
+      "name": "Juan",
+      "speciality_id": 0,
+      "phone": 123456789,
+      "address": "calle falsa 123",
+      "avatar": "https://placebeard.it/640x360"
+    },
+    {
+      "id": 1,
+      "doctor_id": 4,
+      "name": "Pedro",
+      "speciality_id": 1,
+      "phone": 123456789,
+      "address": "calle falsa 123",
+      "avatar": "https://placebeard.it/640x360"
+    }
+  ],
+  "speciality": [
+    {
+      "id": 0,
+      "name": "Cardiologia"
+    },
+    {
+      "id": 1,
+      "name": "Urologia"
+    }
+  ],
+  "appointments": [
+    {
+      "title": "Cardiologia con Juan",
+      "date": "2023-03-31",
+      "user_id": 2,
+      "doctor_id": 0,
+      "id": 1
+    }
+  ]
+}

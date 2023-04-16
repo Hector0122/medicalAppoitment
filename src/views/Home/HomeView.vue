@@ -1,0 +1,25 @@
+<template>
+  <v-layout>
+    <v-col cols="12">
+      <div class="d-flex justify-center">
+        <card-component />
+      </div>
+      <div>
+        <v-row>
+          <v-col>
+            <calendar-component />
+          </v-col>
+          <v-col cols="4">
+            <list-appointments />
+          </v-col>
+        </v-row>
+      </div>
+    </v-col>
+  </v-layout>
+</template>
+
+<script setup>
+import CardComponent from "./components/CardComponent.vue";
+import CalendarComponent from "./components/CalendarComponent.vue";
+import ListAppointments from "./components/ListAppointments.vue";
+</script>
