@@ -1,78 +1,50 @@
 <template>
-  <div class="form-container">
-    <h1>Sign Up</h1>
-    <input
-      type="email"
-      v-model="email"
-      placeholder="Enter Email"
-      class="input-field"
-    />
-    <input
-      type="password"
-      v-model="password"
-      placeholder="Enter Password"
-      class="input-field"
-    />
-    <select v-model="role" class="input-field">
-      <option :value="0">Paciente</option>
-      <option :value="1">Doctor</option>
-    </select>
-  </div>
-  <div class="button-container">
-    <button v-on:click="signUp" class="sign-up-button">Sign Up</button>
-    <p>
-      Already have an account?
-      <router-link to="/login" class="login-link">Login</router-link>
-    </p>
+  <div class="container">
+    <div class="form-container">
+      <h1>Sign Up</h1>
+      <div>
+        <v-text-field
+          label="Email"
+          v-model="email"
+          hide-details="auto"
+          :rules="[rules.required, rules.validateEmail]"
+        ></v-text-field>
+        <v-text-field
+          v-model="password"
+          :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+          :rules="[rules.required, rules.min]"
+          :type="show1 ? 'text' : 'password'"
+          name="input-10-1"
+          label="Password"
+          hint="At least 8 characters"
+          counter
+          @click:append="show1 = !show1"
+        ></v-text-field>
+      </div>
+      <v-select
+        v-model="select"
+        :items="items"
+        item-title="text"
+        item-value="value"
+        label="Role"
+        persistent-hint
+        return-object
+        single-line
+      ></v-select>
+      <button v-on:click="signUp" class="sign-up-button mb-3">Sign Up</button>
+
+      <div>
+        Already have an account?
+        <router-link to="/login" class="login-link">Login</router-link>
+      </div>
+    </div>
   </div>
 </template>
-
-<style>
-.form-container {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.input-field {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.button-container {
-  text-align: center;
-}
-
-.sign-up-button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.sign-up-button:hover {
-  background-color: #0062cc;
-}
-
-.login-link {
-  color: #007bff;
-  text-decoration: none;
-}
-</style>
 
 <script>
 import axios from "axios";
 import sgMail from "@sendgrid/mail";
+import "./style.css";
 
 export default {
   name: "SignUp",
@@ -81,7 +53,25 @@ export default {
       role: "",
       email: "",
       password: "",
+      select: { text: "Paciente", value: 0 },
+      items: [
+        { text: "Paciente", value: 0 },
+        { text: "Doctor", value: 1 },
+      ],
+      show1: false,
+      show2: true,
+      rules: {
+        required: (value) => !!value || "Required.",
+        min: (v) => v.length >= 8 || "Min 8 characters",
+        emailMatch: () => `The email and password you entered don't match`,
+        validateEmail: (value) =>
+          /.+@.+\..+/.test(value) || "E-mail must be valid",
+      },
     };
+  },
+
+  mounted() {
+    this.$vuetify.theme.dark = true;
   },
   methods: {
     async signUp() {
@@ -91,7 +81,7 @@ export default {
           {
             email: this.email,
             password: this.password,
-            role: parseInt(this.role),
+            role: this.select.value,
           },
           {
             headers: {
@@ -111,9 +101,9 @@ export default {
     },
 
     sendConfirmationEmail() {
-      sgMail.setApiKey(
-        "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"
-      );
+      sgMail.setApiKey(import.meta.env.VITE_SENDGRID_API_KEY);
+
+      console.log(this.email);
 
       sgMail.send({
         to: this.email,
@@ -123,7 +113,7 @@ export default {
 
 ¡Gracias por registrarte en nuestra plataforma! Estamos muy contentos de tenerte como parte de nuestra comunidad. Para acceder a tu cuenta, por favor sigue el enlace que aparece a continuación:
 
-Iniciar sesión: http://localhost:4000/login
+Iniciar sesión: http://localhost:4000/profile
 
 Si tienes alguna pregunta o problema, por favor no dudes en contactarnos. Estamos aquí para ayudarte en todo lo que necesites.
 

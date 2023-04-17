@@ -1,7 +1,9 @@
 <template>
-  <v-dialog v-model="dialog" max-width="300px">
+  <v-dialog max-width="300px">
     <v-card>
-      <v-card-title class="headline">Reservar Cita</v-card-title>
+      <v-card-title class="headline">{{
+        specialitySelected ? "Reservar Cita" : selectedSpeciality
+      }}</v-card-title>
       <v-container class="d-flex flex-column justify-center align-center">
         <template v-if="specialitySelected">
           <v-card-title>Especialidades</v-card-title>
@@ -16,26 +18,24 @@
           </v-radio-group>
         </template>
         <template v-else>
-          <v-card-title>{{ selectedSpeciality }}</v-card-title>
           <v-radio-group v-model="selectedDoctor" row v-if="doctorsSelected">
             <v-radio
               v-for="doctor in filteredDoctors"
               :key="doctor"
               :value="doctor"
+              >{{ doctor }}</v-radio
             >
-              {{ doctor }}
-            </v-radio>
           </v-radio-group>
         </template>
       </v-container>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="blue darken-1" text @click="handleCancelClick">
-          {{ specialitySelected ? "Cancelar" : "Atrás" }}
-        </v-btn>
-        <v-btn color="blue darken-1" text @click="handleReserveClick">
-          {{ specialitySelected ? "Aceptar" : "Reservar" }}
-        </v-btn>
+        <v-btn color="blue darken-1" text @click="closeCard">{{
+          specialitySelected ? "Cancelar" : "Atrás"
+        }}</v-btn>
+        <v-btn color="blue darken-1" text @click="handleReserveClick">{{
+          specialitySelected ? "Aceptar" : "Reservar"
+        }}</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -47,7 +47,6 @@ import axios from "axios";
 export default {
   data() {
     return {
-      dialog: false,
       especialidades: [],
       doctores: [],
       selectedSpeciality: "",
@@ -57,6 +56,7 @@ export default {
     };
   },
   props: {
+    dialog: Boolean,
     fecha_seleccionada: String,
     user_id: Number,
   },
@@ -82,8 +82,7 @@ export default {
   },
 
   methods: {
-    handleCancelClick() {
-      this.dialog = false;
+    closeCard() {
       this.specialitySelected = true;
       this.doctorsSelected = false;
       this.selectedSpeciality = "";
@@ -105,9 +104,7 @@ export default {
         };
         axios
           .post("http://localhost:3000/appointments", appointment)
-          .then(() => {
-            this.dialog = false;
-          })
+          .then(() => {})
           .catch((error) => {
             console.error(error);
           });

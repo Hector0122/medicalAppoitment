@@ -1,33 +1,37 @@
 <template>
-  <nav class="navbar">
-    <button v-if="username" class="navbar-logout-btn" @click="logout">
-      Logout
-    </button>
-  </nav>
+  <v-card flat rounded="0" class="mb-5">
+    <v-toolbar app color="#1d63a8" density="compact">
+      <v-menu v-model="menu" right>
+        <template v-slot:activator="{ on }">
+          <v-btn
+            icon
+            v-on="on"
+            class="ml-auto"
+            color="white"
+            @click="menu = !menu"
+          >
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item
+            v-for="(item, index) in items"
+            :key="index"
+            @click="item.action()"
+          >
+            <v-list-item-title>{{ item.text }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+    </v-toolbar>
+  </v-card>
 </template>
 
-<style>
-.navbar {
-  background-color: #1d63a8;
-  color: white;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  padding: 10px;
-}
-
-.navbar-brand {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.navbar-logout-btn {
-  background-color: white;
-  color: #333;
-  border: none;
-  padding: 8px 12px;
-  font-size: 16px;
-  cursor: pointer;
+<style scoped>
+.v-overlay {
+  position: absolute;
+  left: calc(100% - 150px) !important;
+  top: 50px !important;
 }
 </style>
 
@@ -35,7 +39,19 @@
 export default {
   data() {
     return {
-      username: localStorage.getItem("user"),
+      menu: false,
+      items: [
+        {
+          text: "Logout",
+          action: this.logout,
+        },
+        {
+          text: "Editar Perfil",
+          action: () => {
+            this.$router.push("/profile");
+          },
+        },
+      ],
     };
   },
   methods: {

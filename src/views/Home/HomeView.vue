@@ -1,6 +1,9 @@
 <template>
   <v-layout>
     <v-col cols="12">
+      <div>
+        <tool-bar />
+      </div>
       <div class="d-flex justify-center">
         <card-component />
       </div>
@@ -22,4 +25,5 @@
 import CardComponent from "./components/CardComponent.vue";
 import CalendarComponent from "./components/CalendarComponent.vue";
 import ListAppointments from "./components/ListAppointments.vue";
+import ToolBar from "@/layouts/ToolBar.vue";
 </script>

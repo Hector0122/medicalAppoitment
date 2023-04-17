@@ -3,6 +3,8 @@ import Home from "@/views/Home/HomeView.vue";
 import Login from "@/views/Login/MainLogin.vue";
 import Admin from "@/views/Admin/AdminPage.vue";
 import Signup from "@/views/Login/Signup.vue";
+import ProfileView from "@/views/Profile/EditProfile.vue";
+import Doctor from "@/views/Doctor/DoctorPage.vue";
 
 const routes = [
   {
@@ -10,8 +12,17 @@ const routes = [
     component: Login,
   },
   {
+    path: "/signup",
+    component: Signup,
+  },
+  {
     path: "/admin",
     component: Admin,
+    meta: { requiresAuth: true, role: [2] },
+  },
+  {
+    path: "/profile",
+    component: ProfileView,
     meta: { requiresAuth: true, role: [0] },
   },
   {
@@ -20,8 +31,9 @@ const routes = [
     meta: { requiresAuth: true, role: [0] },
   },
   {
-    path: "/signup",
-    component: Signup,
+    path: "/doctor",
+    component: Doctor,
+    meta: { requiresAuth: true, role: [1] },
   },
   {
     path: "/:catchAll(.*)",

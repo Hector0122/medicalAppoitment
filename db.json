@@ -4,7 +4,7 @@
       "id": 1,
       "role": 0,
       "email": "doctor@gmail.com",
-      "password": "doctor"
+      "password": "doctor12345"
     },
     {
       "id": 2,
@@ -25,86 +25,52 @@
       "password": "doctor2"
     },
     {
-      "email": "hpave954@gmail.com",
-      "password": "Heidi0122",
-      "role": 0,
+      "email": "hector.paramovelasquez@cesunbc.edu.mx",
+      "password": "heidi01221708..",
+      "role": 1,
+      "id": 5
+    },
+    {
+      "email": "heidi@gmail.com",
+      "password": "dante12345",
+      "role": 2,
       "id": 5
     },
     {
       "email": "hpave954@gmail.com",
-      "password": "Heidi0122",
+      "password": "Heidi123",
       "role": 0,
       "id": 6
     },
     {
-      "email": "hec@j.com",
-      "password": "jjj",
-      "role": 1,
+      "email": "hpave954@gmail.com",
+      "password": "Heidi123",
+      "role": 0,
       "id": 7
     },
     {
-      "email": "hector.paramovelasquez@cesunbc.edu.mx",
-      "password": "Cesun",
-      "role": 1,
+      "email": "heheh@gmail.com",
+      "password": "hjhjhkjhhkj",
+      "role": 0,
       "id": 8
-    },
-    {
-      "email": "hector.paramovelasquez@cesunbc.edu.mx",
-      "password": "cesun",
-      "role": 0,
-      "id": 9
-    },
-    {
-      "email": "hector.paramovelasquez@cesunbc.edu.mx",
-      "password": "cesun",
-      "role": 0,
-      "id": 10
-    },
-    {
-      "email": "hector.paramovelasquez@cesunbc.edu.mx",
-      "password": "cesun",
-      "role": 0,
-      "id": 11
-    },
-    {
-      "email": "hector.paramovelasquez@cesunbc.edu.mx",
-      "password": "cesun",
-      "role": 0,
-      "id": 12
-    },
-    {
-      "email": "hector.paramovelasquez@cesunbc.edu.mx",
-      "password": "heheh",
-      "role": 0,
-      "id": 13
-    },
-    {
-      "email": "hector.paramovelasquez@cesunbc.edu.mx",
-      "password": "heidi",
-      "role": 0,
-      "id": 14
-    },
-    {
-      "email": "hector.paramovelasquez@cesunbc.edu.mx",
-      "password": "Heidi0122",
-      "role": 0,
-      "id": 15
     }
   ],
   "pacientes": [
     {
-      "id": 0,
-      "paciente_id": 2,
-      "age": 20,
+      "name": "2Armando",
+      "age": "35",
       "phone": 123456789,
-      "address": "calle falsa 123",
-      "alergias": "ninguna",
-      "avatar": "https://placebeard.it/640x360"
+      "address": "Cesun ",
+      "alergias": "Vue js",
+      "paciente_id": 2,
+      "avatar": "https://placebeard.it/640x360",
+      "id": 0
     },
     {
       "id": 1,
       "paciente_id": 3,
       "age": 20,
+      "name": "Pedro",
       "phone": 123456789,
       "address": "calle falsa 123",
       "alergias": "ninguna",
@@ -118,7 +84,6 @@
       "name": "Juan",
       "speciality_id": 0,
       "phone": 123456789,
-      "address": "calle falsa 123",
       "avatar": "https://placebeard.it/640x360"
     },
     {
@@ -127,7 +92,6 @@
       "name": "Pedro",
       "speciality_id": 1,
       "phone": 123456789,
-      "address": "calle falsa 123",
       "avatar": "https://placebeard.it/640x360"
     }
   ],
@@ -143,11 +107,46 @@
   ],
   "appointments": [
     {
+      "title": "Urologia con Pedro",
+      "date": "2023-04-06",
+      "user_id": 2,
+      "doctor_id": 1,
+      "id": 1
+    },
+    {
       "title": "Cardiologia con Juan",
       "date": "2023-03-31",
       "user_id": 2,
       "doctor_id": 0,
-      "id": 1
+      "id": 2
+    },
+    {
+      "title": "Urologia con Pedro",
+      "date": "2023-04-08",
+      "user_id": 2,
+      "doctor_id": 1,
+      "id": 3
+    },
+    {
+      "title": "Cardiologia con Juan",
+      "date": "2023-05-12",
+      "user_id": 2,
+      "doctor_id": 0,
+      "id": 4
+    },
+    {
+      "title": "Cardiologia con Juan",
+      "date": "2023-04-24",
+      "user_id": 2,
+      "doctor_id": 0,
+      "id": 5
+    },
+    {
+      "title": "Urologia con Pedro",
+      "date": "2023-04-19",
+      "user_id": 2,
+      "doctor_id": 1,
+      "id": 6
     }
   ]
 }

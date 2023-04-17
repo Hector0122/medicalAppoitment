@@ -6,13 +6,19 @@
       :fecha_seleccionada="selectedDate"
     />
 
-    <FullCalendar class="calendario" :options="calendarOptions" height="200" />
+    <FullCalendar
+      class="calendario"
+      :options="calendarOptions"
+      :height="'auto'"
+    />
   </div>
 </template>
 <style>
 .calendario {
   margin-top: 20px;
   margin-left: 50px;
+  max-height: 60vh;
+  overflow: auto;
 }
 </style>
 

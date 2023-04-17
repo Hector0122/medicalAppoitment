@@ -1,84 +1,53 @@
 <template>
-  <div class="form-container">
-    <h2>Login</h2>
-    <p>
-      <input
-        type="email"
-        class="input-field"
-        placeholder="email"
+  <div class="container">
+    <div class="form-container">
+      <h1>Login</h1>
+      <v-text-field
+        label="Email"
         v-model="email"
-      />
-    </p>
-    <p>
-      <input
-        type="password"
-        class="input-field"
-        placeholder="Password"
+        hide-details="auto"
+        :rules="[rules.required, rules.validateEmail]"
+      ></v-text-field>
+      <v-text-field
         v-model="password"
-      />
-    </p>
+        :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+        :rules="[rules.required, rules.min]"
+        :type="show1 ? 'text' : 'password'"
+        name="input-10-1"
+        label="Password"
+        hint="At least 8 characters"
+        counter
+        @click:append="show1 = !show1"
+      ></v-text-field>
 
-    <p>
-      Don't have an account?
-      <router-link to="/signup" class="login-link">Sign up</router-link>
-    </p>
-  </div>
-  <div class="button-container">
-    <button class="sign-up-button" @click="login">Login</button>
+      <button class="sign-up-button mb-3" @click="login">Login</button>
+
+      <div class="login-text">
+        Don't have an account?
+        <router-link to="/signup" class="login-link">Sign up</router-link>
+      </div>
+    </div>
   </div>
 </template>
 
-<style>
-.form-container {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.input-field {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.button-container {
-  text-align: center;
-}
-
-.sign-up-button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.sign-up-button:hover {
-  background-color: #0062cc;
-}
-
-.login-link {
-  color: #007bff;
-  text-decoration: none;
-}
-</style>
-
 <script>
-import { ADMIN } from "@/constants/Role.js";
+import { ADMIN, DOCTOR } from "@/constants/Role.js";
+import "./style.css";
 
 export default {
   data() {
     return {
       email: "",
       password: "",
+      show1: false,
+      show2: true,
+      rules: {
+        required: (value) => !!value || "Required.",
+        min: (v) => v.length >= 8 || "Min 8 characters",
+        emailMatch: () => `The email and password you entered don't match`,
+        validateEmail: (value) =>
+          /.+@.+\..+/.test(value) || "E-mail must be valid",
+      },
     };
   },
   methods: {
@@ -92,6 +61,8 @@ export default {
         localStorage.setItem("user", JSON.stringify(user));
         if (user.role === ADMIN) {
           this.$router.push("/admin");
+        } else if (user.role === DOCTOR) {
+          this.$router.push("/doctor");
         } else {
           this.$router.push("/home");
         }

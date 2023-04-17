@@ -18,8 +18,11 @@
 <style>
 .list {
   width: 80%;
-  margin-top: 20%;
+  margin-top: 18%;
   margin-right: 50px;
+  max-height: 52vh;
+  overflow-y: auto;
+  background-color: aliceblue;
 }
 </style>
 
