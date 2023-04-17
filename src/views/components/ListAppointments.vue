@@ -61,6 +61,7 @@ export default {
       axios
         .delete(`http://localhost:3000/appointments/${id}`)
         .then(() => {
+           window.location.reload();
           this.quotes = this.quotes.filter((quote) => quote.id !== id);
         })
         .catch((error) => {

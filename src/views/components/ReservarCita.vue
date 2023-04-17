@@ -104,7 +104,9 @@ export default {
         };
         axios
           .post("http://localhost:3000/appointments", appointment)
-          .then(() => {})
+          .then(() => {
+            window.location.reload();
+          })
           .catch((error) => {
             console.error(error);
           });

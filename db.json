@@ -194,38 +194,10 @@
   "appointments": [
     {
       "title": "Cardiologia con Juan",
-      "date": "2023-03-31",
-      "user_id": 2,
-      "doctor_id": 0,
-      "id": 2
-    },
-    {
-      "title": "Urologia con Pedro",
-      "date": "2023-04-08",
-      "user_id": 2,
-      "doctor_id": 1,
-      "id": 3
-    },
-    {
-      "title": "Cardiologia con Juan",
-      "date": "2023-05-12",
-      "user_id": 2,
-      "doctor_id": 0,
-      "id": 4
-    },
-    {
-      "title": "Cardiologia con Juan",
       "date": "2023-04-24",
       "user_id": 2,
       "doctor_id": 0,
       "id": 5
-    },
-    {
-      "title": "Urologia con Pedro",
-      "date": "2023-04-19",
-      "user_id": 2,
-      "doctor_id": 1,
-      "id": 6
     },
     {
       "title": "Cardiologia con Juan",
@@ -254,6 +226,20 @@
       "user_id": 9,
       "doctor_id": 0,
       "id": 10
+    },
+    {
+      "title": "Cardiologia con hectorw",
+      "date": "2023-04-06",
+      "user_id": 2,
+      "doctor_id": 10,
+      "id": 11
+    },
+    {
+      "title": "Cardiologia con Juan1",
+      "date": "2023-04-21",
+      "user_id": 2,
+      "doctor_id": 0,
+      "id": 12
     }
   ]
 }
