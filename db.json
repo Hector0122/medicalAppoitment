@@ -119,14 +119,6 @@
       "phone": "w687",
       "avatar": "https://placebeard.it/640x360",
       "id": 10
-    },
-    {
-      "doctor_id": 3,
-      "name": "hector",
-      "speciality_id": 0,
-      "phone": "687",
-      "avatar": "https://placebeard.it/640x360",
-      "id": 11
     }
   ],
   "speciality": [
