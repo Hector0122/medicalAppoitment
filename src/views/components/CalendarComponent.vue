@@ -24,7 +24,7 @@
 
 <script>
 import FullCalendar from "@fullcalendar/vue3";
-import MakeAppointment from "@/views/Home/components/ReservarCita.vue";
+import MakeAppointment from "@/views/components/ReservarCita.vue";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import axios from "axios";

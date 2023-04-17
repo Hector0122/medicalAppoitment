@@ -36,6 +36,8 @@
 </style>
 
 <script>
+import { DOCTOR } from "@/constants/Role";
+
 export default {
   data() {
     return {
@@ -48,7 +50,11 @@ export default {
         {
           text: "Editar Perfil",
           action: () => {
-            this.$router.push("/profile");
+            const r = localStorage.getItem("user")
+            const user = JSON.parse(r);
+            user.role === DOCTOR
+              ? this.$router.push("/profile-doctor")
+              : this.$router.push("/profile");
           },
         },
       ],

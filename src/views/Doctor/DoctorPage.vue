@@ -1,17 +1,29 @@
 <template>
-  <div>
-    <h1>Doctor Page</h1>
-    <p>Welcome, {{ user.username }}!</p>
-    <p>You have admin privileges.</p>
-  </div>
+  <v-layout>
+    <v-col cols="12">
+      <div>
+        <tool-bar />
+      </div>
+      <div class="d-flex justify-center">
+        <card-component />
+      </div>
+      <div>
+        <v-row>
+          <v-col>
+            <calendar-component />
+          </v-col>
+          <v-col cols="4">
+            <list-appointments />
+          </v-col>
+        </v-row>
+      </div>
+    </v-col>
+  </v-layout>
 </template>
 
-<script>
-export default {
-  computed: {
-    user() {
-      return JSON.parse(localStorage.getItem('user'));
-    }
-  }
-}
+<script setup>
+import CardComponent from "./components/DoctorCard.vue";
+import CalendarComponent from "@/views/components/CalendarComponent.vue";
+import ListAppointments from "@/views/components/ListAppointments.vue";
+import ToolBar from "@/layouts/ToolBar.vue";
 </script>

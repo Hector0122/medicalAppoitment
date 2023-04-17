@@ -13,46 +13,10 @@
       "password": "paciente1"
     },
     {
-      "id": 3,
-      "role": 1,
-      "email": "paciente2@gmail.com",
-      "password": "paciente2"
-    },
-    {
-      "id": 4,
-      "role": 0,
-      "email": "doctor2@gmail.com",
-      "password": "doctor2"
-    },
-    {
-      "email": "hector@gmail.com",
-      "password": "12345678",
-      "role": 0,
-      "id": 5
-    },
-    {
-      "email": "juan@h.com",
-      "password": "heidi123",
-      "role": 0,
-      "id": 6
-    },
-    {
-      "email": "dante@gmail.com",
-      "password": "12345678",
-      "role": 0,
-      "id": 7
-    },
-    {
-      "email": "julieta@gmail.com",
-      "password": "julieta1",
-      "role": 0,
-      "id": 8
-    },
-    {
       "email": "h@gmail.com",
       "password": "12345678",
-      "role": 0,
-      "id": 9
+      "role": 1,
+      "id": 3
     }
   ],
   "pacientes": [
@@ -65,110 +29,104 @@
       "paciente_id": 2,
       "avatar": "https://placebeard.it/640x360",
       "id": 0
-    },
-    {
-      "id": 1,
-      "paciente_id": 3,
-      "age": 20,
-      "name": "Pedro",
-      "phone": 123456789,
-      "address": "calle falsa 123",
-      "alergias": "ninguna",
-      "avatar": "https://placebeard.it/640x360"
-    },
-    {
-      "name": "Hector",
-      "age": "67",
-      "phone": "67",
-      "address": "67",
-      "alergias": "67",
-      "avatar": "https://placebeard.it/640x360",
-      "id": 2
-    },
-    {
-      "name": "Hector",
-      "age": "78",
-      "phone": "67",
-      "address": "67",
-      "alergias": "67",
-      "avatar": "https://placebeard.it/640x360",
-      "id": 3
-    },
-    {
-      "name": "Hector",
-      "age": "67",
-      "phone": "67",
-      "address": "67",
-      "alergias": "67",
-      "avatar": "https://placebeard.it/640x360",
-      "id": 4
-    },
-    {
-      "name": "gh",
-      "age": "gh",
-      "phone": "gh",
-      "address": "gh",
-      "alergias": "gh",
-      "avatar": "https://placebeard.it/640x360",
-      "id": 5
-    },
-    {
-      "name": "dante",
-      "age": "67",
-      "phone": "67",
-      "address": "67",
-      "alergias": "67",
-      "paciente_id": 7,
-      "avatar": "https://placebeard.it/640x360",
-      "id": 6
-    },
-    {
-      "name": "Julieta",
-      "age": "1",
-      "phone": "1",
-      "address": "1",
-      "alergias": "1",
-      "paciente_id": 8,
-      "avatar": "https://placebeard.it/640x360",
-      "id": 7
-    },
-    {
-      "name": "Julio",
-      "age": "50",
-      "phone": 123456789,
-      "address": "Cesun ",
-      "alergias": "Vue js",
-      "paciente_id": 8,
-      "avatar": "https://placebeard.it/640x360",
-      "id": 8
-    },
-    {
-      "name": "Juan",
-      "age": "6767",
-      "phone": "67",
-      "address": "67",
-      "alergias": "67",
-      "paciente_id": 9,
-      "avatar": "https://placebeard.it/640x360",
-      "id": 9
     }
   ],
   "doctor": [
     {
-      "id": 0,
       "doctor_id": 1,
-      "name": "Juan",
-      "speciality_id": 0,
-      "phone": 123456789,
-      "avatar": "https://placebeard.it/640x360"
+      "name": "Juan1",
+      "speciality_id": "0",
+      "phone": "6641823917",
+      "avatar": "https://placebeard.it/640x360",
+      "id": 0
     },
     {
-      "id": 1,
-      "doctor_id": 4,
-      "name": "Pedro",
-      "speciality_id": 1,
+      "doctor_id": 3,
+      "name": "hector",
+      "speciality_id": 2,
+      "phone": "6877896798679",
+      "avatar": "https://placebeard.it/640x360",
+      "id": 1
+    },
+    {
+      "doctor_id": 3,
+      "name": "Juanito",
+      "speciality_id": "0",
       "phone": 123456789,
-      "avatar": "https://placebeard.it/640x360"
+      "avatar": "https://placebeard.it/640x360",
+      "id": 2
+    },
+    {
+      "doctor_id": 3,
+      "name": "Juan",
+      "speciality_id": 4,
+      "phone": 123456789,
+      "avatar": "https://placebeard.it/640x360",
+      "id": 3
+    },
+    {
+      "doctor_id": 3,
+      "name": "Juan",
+      "speciality_id": "0",
+      "phone": 123456789,
+      "avatar": "https://placebeard.it/640x360",
+      "id": 4
+    },
+    {
+      "doctor_id": 3,
+      "name": "Juan",
+      "speciality_id": "0",
+      "phone": 123456789,
+      "avatar": "https://placebeard.it/640x360",
+      "id": 5
+    },
+    {
+      "doctor_id": 3,
+      "name": "Juan1",
+      "speciality_id": 0,
+      "phone": "6641823917",
+      "avatar": "https://placebeard.it/640x360",
+      "id": 6
+    },
+    {
+      "doctor_id": 3,
+      "name": "Juan1",
+      "speciality_id": 0,
+      "phone": "6641823917",
+      "avatar": "https://placebeard.it/640x360",
+      "id": 7
+    },
+    {
+      "doctor_id": 3,
+      "name": "hector",
+      "speciality_id": 0,
+      "phone": "687",
+      "avatar": "https://placebeard.it/640x360",
+      "id": 8
+    },
+    {
+      "doctor_id": 3,
+      "name": "hector",
+      "speciality_id": 0,
+      "phone": "687",
+      "avatar": "https://placebeard.it/640x360",
+      "id": 9
+    },
+    {
+      "doctor_id": 3,
+      "name": "hectorw",
+      "speciality_id": 0,
+      "phone": "w687",
+      "avatar": "https://placebeard.it/640x360",
+      "id": 10
+    },
+    {
+      "doctor_id": 3,
+      "name": "hector",
+      "speciality_id": 0,
+      "phone": "687",
+      "avatar": "https://placebeard.it/640x360",
+      "id": 11
     }
   ],
   "speciality": [
@@ -179,6 +137,58 @@
     {
       "id": 1,
       "name": "Urologia"
+    },
+    {
+      "id": 2,
+      "name": "Ginecologia"
+    },
+    {
+      "id": 3,
+      "name": "Oftalmologia"
+    },
+    {
+      "id": 4,
+      "name": "Dermatologia"
+    },
+    {
+      "id": 5,
+      "name": "Neurologia"
+    },
+    {
+      "id": 6,
+      "name": "Traumatologia"
+    },
+    {
+      "id": 7,
+      "name": "Otorrinolaringologia"
+    },
+    {
+      "id": 8,
+      "name": "Psiquiatria"
+    },
+    {
+      "id": 9,
+      "name": "Pediatría"
+    },
+    {
+      "id": 10,
+      "name": "Gastroenterologia"
+    },
+    {
+      "id": 11,
+      "name": "Endocrinologia"
+    },
+    {
+      "id": 12,
+      "name": "Infectologia"
+    },
+    {
+      "id": 13,
+      "name": "Nefrologia"
+    },
+    {
+      "id": 14,
+      "name": "Reumatologia"
     }
   ],
   "appointments": [

@@ -22,8 +22,8 @@
 </template>
 
 <script setup>
-import CardComponent from "./components/CardComponent.vue";
-import CalendarComponent from "./components/CalendarComponent.vue";
-import ListAppointments from "./components/ListAppointments.vue";
+import CardComponent from "@/views/Home/components/CardComponent.vue";
+import CalendarComponent from "@/views/components/CalendarComponent.vue";
+import ListAppointments from "@/views/components/ListAppointments.vue";
 import ToolBar from "@/layouts/ToolBar.vue";
 </script>

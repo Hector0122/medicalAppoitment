@@ -22,15 +22,16 @@
         ></v-text-field>
       </div>
       <v-select
-        v-model="select"
-        :items="items"
-        item-title="text"
-        item-value="value"
-        label="Role"
+        v-model="doctor.speciality_id"
+        :items="specialties"
+        item-title="name"
+        item-value="id"
+        label="Especialidad"
         persistent-hint
         return-object
         single-line
       ></v-select>
+
       <button v-on:click="signUp" class="sign-up-button mb-3">Sign Up</button>
 
       <div>
@@ -86,7 +87,7 @@ export default {
           if (this.select.value === PATIENT) {
             this.$router.push("/profile");
           } else {
-            this.$router.push("/doctor");
+            this.$router.push("/profile-doctor");
           }
         })
 

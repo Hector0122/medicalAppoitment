@@ -5,6 +5,7 @@ import Admin from "@/views/Admin/AdminPage.vue";
 import Signup from "@/views/Login/Signup.vue";
 import ProfileView from "@/views/Profile/EditProfile.vue";
 import Doctor from "@/views/Doctor/DoctorPage.vue";
+import DoctorProfile from "@/views/Profile/DoctorProfile.vue";
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: "/profile",
     name: "profile",
     component: ProfileView,
+  },
+  {
+    path: "/profile-doctor",
+    name: "profile-doctor",
+    component: DoctorProfile,
   },
   {
     path: "/home",
