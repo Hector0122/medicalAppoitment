@@ -43,8 +43,8 @@
 
 <script>
 import axios from "axios";
-import sgMail from "@sendgrid/mail";
 import "./style.css";
+import { PATIENT } from "@/constants/Role";
 
 export default {
   name: "SignUp",
@@ -76,51 +76,23 @@ export default {
   methods: {
     async signUp() {
       await axios
-        .post(
-          "http://localhost:3000/users",
-          {
-            email: this.email,
-            password: this.password,
-            role: this.select.value,
-          },
-          {
-            headers: {
-              "User-Agent":
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",
-            },
-          }
-        )
+        .post("http://localhost:3000/users", {
+          email: this.email,
+          password: this.password,
+          role: this.select.value,
+        })
         .then(() => {
-          this.sendConfirmationEmail();
           alert("Usuario registrado correctamente");
+          if (this.select.value === PATIENT) {
+            this.$router.push("/profile");
+          } else {
+            this.$router.push("/doctor");
+          }
         })
 
         .catch((error) => {
           console.log(error);
         });
-    },
-
-    sendConfirmationEmail() {
-      sgMail.setApiKey(import.meta.env.VITE_SENDGRID_API_KEY);
-
-      console.log(this.email);
-
-      sgMail.send({
-        to: this.email,
-        from: "hpave954@gmail.com",
-        subject: "Confirmación de registro",
-        text: `¡Hola!
-
-¡Gracias por registrarte en nuestra plataforma! Estamos muy contentos de tenerte como parte de nuestra comunidad. Para acceder a tu cuenta, por favor sigue el enlace que aparece a continuación:
-
-Iniciar sesión: http://localhost:4000/profile
-
-Si tienes alguna pregunta o problema, por favor no dudes en contactarnos. Estamos aquí para ayudarte en todo lo que necesites.
-
-¡Bienvenido de nuevo y gracias por unirte a nosotros!
-
-Saludos cordiales,`,
-      });
     },
   },
 };

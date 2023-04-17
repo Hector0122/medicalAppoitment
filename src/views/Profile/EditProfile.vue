@@ -50,7 +50,6 @@ export default {
   },
   async mounted() {
     const sesion = JSON.parse(localStorage.getItem("user"));
-
     const response = await axios.get("http://localhost:3000/pacientes");
     this.paciente = response.data.find(
       (paciente) => paciente.paciente_id === sesion.id
@@ -65,17 +64,35 @@ export default {
         address: this.paciente.address,
         alergias: this.paciente.alergias,
         paciente_id: this.paciente.paciente_id,
-        avatar: this.paciente.avatar,
+        avatar: "https://placebeard.it/640x360",
       };
 
-      const response = await axios.put(
-        `http://localhost:3000/pacientes/${this.paciente.id}`,
-        formValue
-      );
-      if (response.status === 200) {
+      let response;
+      if (this.paciente.id) {
+        response = await axios.put(
+          `http://localhost:3000/pacientes/${this.paciente.id}`,
+          formValue
+        );
+
         this.$router.push("/home");
+      } else {
+        const newUser = await axios
+          .get("http://localhost:3000/users")
+          .then((res) => {
+            return res.data[res.data.length - 1];
+          });
+
+        response = await axios.post("http://localhost:3000/pacientes", {
+          ...formValue,
+          paciente_id: newUser.id,
+        });
+
+        if (response) {
+          this.$router.push("/login");
+        }
       }
     },
+
     handleFileUpload() {
       const file = this.$refs.fileInput.files[0];
       const reader = new FileReader();

@@ -2,7 +2,11 @@
   <v-card class="list">
     <v-card-title class="headline">Citas</v-card-title>
     <v-card-text>
-      <v-list-item v-for="quote in quotes" :key="quote.id">
+      <v-list-item
+        v-for="quote in filterQuotesByUser()"
+        :key="quote.id"
+        class="list-item"
+      >
         <v-list-item-content>
           <v-list-item-title>{{ quote.title }}</v-list-item-title>
           <v-list-item-subtitle>{{ quote.date }}</v-list-item-subtitle>
@@ -41,6 +45,13 @@ export default {
     });
   },
   methods: {
+    filterQuotesByUser() {
+      const session = JSON.parse(localStorage.getItem("user"));
+      return (this.quotes = this.quotes.filter(
+        (quote) => quote.user_id === session.id
+      ));
+    },
+
     confirmDelete(id) {
       if (window.confirm("¿Está seguro que desea eliminar esta cita?")) {
         this.deleteQuote(id);

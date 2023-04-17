@@ -22,8 +22,8 @@ const routes = [
   },
   {
     path: "/profile",
+    name: "profile",
     component: ProfileView,
-    meta: { requiresAuth: true, role: [0] },
   },
   {
     path: "/home",
