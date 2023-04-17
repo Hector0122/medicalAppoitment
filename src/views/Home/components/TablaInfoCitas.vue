@@ -3,10 +3,10 @@
   <v-table>
     <thead>
       <tr>
-        <th class="text-left">Fecha</th>
-        <th class="text-left">Paciente</th>
-        <th class="text-left">Doctor</th>
-        <th class="text-left">Acciones</th>
+        <th class="font-weight-black">Fecha</th>
+        <th class="font-weight-black">Paciente</th>
+        <th class="font-weight-black">Doctor</th>
+        <th class="font-weight-black">Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -15,10 +15,10 @@
         <td>{{ cita.user_id }}</td>
         <td>{{ cita.doctor_id }}</td>
         <td>
-          <v-btn icon color="primary" @click="editItem(doctor.id)">
+          <v-btn icon color="primary" @click="editItem(cita.id)">
             <v-icon>mdi-pencil</v-icon>
           </v-btn>
-          <v-btn icon color="deep-orange" @click="deleteItem(doctor.id)">
+          <v-btn icon color="deep-orange" @click="deleteItem(cita.id)">
             <v-icon>mdi-delete</v-icon>
           </v-btn>
         </td>
@@ -55,6 +55,27 @@ export default {
 
       console.log(filteredPatient);
       return filteredPatient;
+    },
+  },
+  methods: {
+    editItem(item) {
+      console.log(item);
+
+    },
+    deleteItem(item) {
+      if (window.confirm("¿Está seguro que desea eliminar registro de esta Cita?")) {
+        this.deleteCita(item);
+      }
+    },
+    deleteCita(id) {
+      axios
+        .delete(`http://localhost:3000/appointments/${id}`)
+        .then(() => {
+          this.citas = this.citas.filter((cita) => cita.id !== id);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     },
   },
 };

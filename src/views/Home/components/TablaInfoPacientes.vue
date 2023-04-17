@@ -3,13 +3,13 @@
   <v-table>
     <thead>
       <tr>
-        <th class="text-left">Nombre</th>
-        <th class="text-left">Edad</th>
-        <th class="text-left">Telefono</th>
-        <th class="text-left">Dirección</th>
-        <th class="text-left">Alergias</th>
-        <th class="text-left">Fotografia</th>
-        <th class="text-left">Acciones</th>
+        <th class="font-weight-black">Nombre</th>
+        <th class="font-weight-black">Edad</th>
+        <th class="font-weight-black">Telefono</th>
+        <th class="font-weight-black">Dirección</th>
+        <th class="font-weight-black">Alergias</th>
+        <th class="font-weight-black">Fotografia</th>
+        <th class="font-weight-black">Acciones</th>
       </tr>
     </thead>
     <tbody>

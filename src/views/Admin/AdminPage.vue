@@ -1,6 +1,9 @@
 <template>
-  <v-card>
+  <v-card >
     <ToolBar />
+    <v-card-title>
+      <h1 class="display-1">Administrador</h1>
+    </v-card-title>
     <v-tabs
       v-model="tab"
       bg-color="primary"
