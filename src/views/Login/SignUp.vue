@@ -22,10 +22,10 @@
         ></v-text-field>
       </div>
       <v-select
-        v-model="doctor.speciality_id"
-        :items="specialties"
-        item-title="name"
-        item-value="id"
+        v-model="select"
+        :items="items"
+        item-title="text"
+        item-value="value"
         label="Especialidad"
         persistent-hint
         return-object

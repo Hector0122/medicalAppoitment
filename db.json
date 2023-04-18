@@ -13,29 +13,67 @@
       "password": "paciente1"
     },
     {
-      "email": "h@gmail.com",
+      "email": "admin@gmail.com",
       "password": "12345678",
       "role": 2,
       "id": 3
+    },
+    {
+      "email": "doctor2@gmail.com",
+      "password": "12345678",
+      "role": 1,
+      "id": 4
+    },
+    {
+      "id": 5,
+      "role": 0,
+      "email": "hector@gmail.com",
+      "password": "hector12345"
+    },
+    {
+      "email": "Jose@gmail.com",
+      "password": "12345678",
+      "role": 0,
+      "id": 6
     }
   ],
   "pacientes": [
     {
-      "name": "2Armando",
-      "age": "50",
+      "name": "Armando",
+      "age": "30",
       "phone": 123456789,
       "address": "Cesun ",
-      "alergias": "Vue js",
+      "alergias": "Polen",
       "paciente_id": 2,
       "avatar": "https://placebeard.it/640x360",
       "id": 0
+    },
+    {
+      "name": "Hector",
+      "age": "30",
+      "phone": 6641823917,
+      "address": "Casas Beta",
+      "alergias": "Ninguna",
+      "paciente_id": 5,
+      "avatar": "https://placebeard.it/640x360",
+      "id": 1
+    },
+    {
+      "name": "Jose",
+      "age": "21",
+      "phone": "668766555",
+      "address": "colonia prado",
+      "alergias": "niguna",
+      "paciente_id": 6,
+      "avatar": "https://placebeard.it/640x360",
+      "id": 2
     }
   ],
   "doctor": [
     {
       "doctor_id": 1,
       "name": "Juan1",
-      "speciality_id": "0",
+      "speciality_id": 0,
       "phone": "6641823917",
       "avatar": "https://placebeard.it/640x360",
       "id": 0
@@ -43,82 +81,26 @@
     {
       "doctor_id": 3,
       "name": "hector",
-      "speciality_id": 2,
+      "speciality_id": 1,
       "phone": "6877896798679",
       "avatar": "https://placebeard.it/640x360",
       "id": 1
     },
     {
-      "doctor_id": 3,
-      "name": "Juanito",
-      "speciality_id": "0",
+      "doctor_id": 4,
+      "name": "otro doctor",
+      "speciality_id": 1,
       "phone": 123456789,
       "avatar": "https://placebeard.it/640x360",
       "id": 2
     },
     {
-      "doctor_id": 3,
-      "name": "Juan",
-      "speciality_id": 4,
+      "doctor_id": 5,
+      "name": "Juanito",
+      "speciality_id": 0,
       "phone": 123456789,
       "avatar": "https://placebeard.it/640x360",
-      "id": 3
-    },
-    {
-      "doctor_id": 3,
-      "name": "Juan",
-      "speciality_id": "0",
-      "phone": 123456789,
-      "avatar": "https://placebeard.it/640x360",
-      "id": 4
-    },
-    {
-      "doctor_id": 3,
-      "name": "Juan",
-      "speciality_id": "0",
-      "phone": 123456789,
-      "avatar": "https://placebeard.it/640x360",
-      "id": 5
-    },
-    {
-      "doctor_id": 3,
-      "name": "Juan1",
-      "speciality_id": 0,
-      "phone": "6641823917",
-      "avatar": "https://placebeard.it/640x360",
-      "id": 6
-    },
-    {
-      "doctor_id": 3,
-      "name": "Juan1",
-      "speciality_id": 0,
-      "phone": "6641823917",
-      "avatar": "https://placebeard.it/640x360",
-      "id": 7
-    },
-    {
-      "doctor_id": 3,
-      "name": "hector",
-      "speciality_id": 0,
-      "phone": "687",
-      "avatar": "https://placebeard.it/640x360",
-      "id": 8
-    },
-    {
-      "doctor_id": 3,
-      "name": "hector",
-      "speciality_id": 0,
-      "phone": "687",
-      "avatar": "https://placebeard.it/640x360",
-      "id": 9
-    },
-    {
-      "doctor_id": 3,
-      "name": "hectorw",
-      "speciality_id": 0,
-      "phone": "w687",
-      "avatar": "https://placebeard.it/640x360",
-      "id": 10
+      "id": 2
     }
   ],
   "speciality": [
@@ -149,34 +131,6 @@
     {
       "id": 6,
       "name": "Traumatologia"
-    },
-    {
-      "id": 7,
-      "name": "Otorrinolaringologia"
-    },
-    {
-      "id": 8,
-      "name": "Psiquiatria"
-    },
-    {
-      "id": 9,
-      "name": "Pediatría"
-    },
-    {
-      "id": 10,
-      "name": "Gastroenterologia"
-    },
-    {
-      "id": 11,
-      "name": "Endocrinologia"
-    },
-    {
-      "id": 12,
-      "name": "Infectologia"
-    },
-    {
-      "id": 13,
-      "name": "Nefrologia"
     }
   ],
   "appointments": [
@@ -221,6 +175,13 @@
       "user_id": 2,
       "doctor_id": 10,
       "id": 11
+    },
+    {
+      "title": "Dermatologia con Juan",
+      "date": "2023-04-07",
+      "user_id": 2,
+      "doctor_id": 3,
+      "id": 12
     }
   ]
 }

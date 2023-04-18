@@ -68,7 +68,7 @@ export default {
       };
 
       let response;
-      if (this.paciente.id) {
+      if (this.paciente.paciente_id) {
         response = await axios.put(
           `http://localhost:3000/pacientes/${this.paciente.id}`,
           formValue

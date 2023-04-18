@@ -29,9 +29,6 @@
         <div>
           <v-card-subtitle> Alergias</v-card-subtitle>
           <v-card-text class="mb-6">{{ paciente.alergias }}</v-card-text>
-
-          <v-card-subtitle> Alergias</v-card-subtitle>
-          <v-card-text>{{ paciente.alergias }}</v-card-text>
         </div>
       </v-card>
     </div>
